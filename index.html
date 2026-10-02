@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness & Cycle Logger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="app-header">
+        <div>
+            <h1>Wellness & Cycle Logger</h1>
+            <p>Keep track of how you're feeling each day.</p>
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <!-- Today's Summary -->
+        <section class="dashboard">
+            <h2>Today's Wellness</h2>
+
+            <div class="summary-grid">
+
+                <div class="summary-card">
+                    <span class="label">Mood</span>
+                    <p id="today-mood">Not logged</p>
+                </div>
+
+                <div class="summary-card">
+                    <span class="label">Energy</span>
+                    <p id="today-energy">Not logged</p>
+                </div>
+
+                <div class="summary-card">
+                    <span class="label">Sleep</span>
+                    <p id="today-sleep">Not logged</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Wellness Form -->
+        <section class="form-section">
+
+            <h2>Log Today's Wellness</h2>
+
+            <form id="wellness-form">
+
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input 
+                        type="date" 
+                        id="date" 
+                        name="date"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="mood">Mood</label>
+
+                    <select id="mood" name="mood" required>
+                        <option value="">Select your mood</option>
+                        <option value="Happy">Happy</option>
+                        <option value="Calm">Calm</option>
+                        <option value="Okay">Okay</option>
+                        <option value="Tired">Tired</option>
+                        <option value="Sad">Sad</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="energy">Energy Level</label>
+
+                    <input 
+                        type="number" 
+                        id="energy" 
+                        name="energy"
+                        min="1"
+                        max="10"
+                        placeholder="1 - 10"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="sleep">Hours of Sleep</label>
+
+                    <input 
+                        type="number" 
+                        id="sleep" 
+                        name="sleep"
+                        min="0"
+                        max="24"
+                        step="0.5"
+                        placeholder="e.g. 7.5"
+                        required
+                    >
+                </div>
+
+
+                <button type="submit">
+                    Save Wellness Entry
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Recent Entries -->
+        <section class="history-section">
+
+            <h2>Recent Entries</h2>
+
+            <div id="entries-container">
+
+                <!-- JavaScript will create entries here -->
+
+                <p id="empty-message">
+                    No wellness entries yet.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
